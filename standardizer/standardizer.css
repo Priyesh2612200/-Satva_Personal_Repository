@@ -1,0 +1,298 @@
+/* navbar brand style */
+.container-fluid{
+    width: 100%;
+}
+.navbar-nav .nav-link.active, .navbar-nav .show>.nav-link {
+    color: hwb(199 32% 9%);
+    font-weight: bold;
+    margin-left: 80px;
+    text-decoration: none !important;
+}
+/* img style */
+#standardizerlogoid
+{
+ height: 60px;
+ width: 160px;
+}
+#adminimage
+{
+  height: 50px;
+  width: 50px;
+  margin-left: 950px;
+}
+.navbar{
+  padding: 0%;
+  margin: 0%;
+}
+
+/* btn style */
+.btn {
+    background-color: #F2F2F2;
+    color: black;
+    text-decoration: none !important;
+  }
+  
+  .btn.active {
+    background-color:#51B7E7;
+    color: white;
+  }
+  .btngroup
+  {
+    margin-left: 10px;
+    margin-top: 20px;
+  }
+  /* 5grid style */
+  .info
+  {
+    font-size: 12px;
+    font-weight: bold;
+    margin-top: 40px;
+  }
+ 
+  .BSA
+  {
+    background-color:#4BA5E5;
+    padding: 5px;
+    border-radius: 5px;
+    margin-top: 10px;
+    color: white;
+  }
+  .mostlikely
+  {
+    background-color:#53C1CD;
+    padding: 5px;
+    border-radius: 5px;
+    margin-top: 10px;
+    color: white;
+  }
+  .likely
+  {
+    background-color:#58CDD7;
+    padding: 5px;
+    border-radius: 5px;
+    margin-top: 28px;
+    color: white;
+  }
+  .possible
+  {
+    background-color:#7FDFE6;
+    padding: 5px;
+    border-radius: 5px;
+    margin-top: 28px;
+    color: white;
+  }
+  .BSAA
+  {
+    background-color:#3E9D66;
+    padding: 5px;
+    border-radius: 5px;
+    margin-top: 10px;
+    color: white;
+  }
+  /* underline */
+  .navbar-nav .nav-link {
+    position: relative;
+  }
+  
+  .navbar-nav .nav-link::before {
+    content: "";
+    position: absolute;
+    width: 37%;
+    height: 2px;
+    bottom: -13px;
+    left: 17px;
+    background-color: #51B7E7;
+    visibility: hidden;
+    transform: scaleX(1);
+  }
+  
+  .navbar-nav .nav-link.active::before
+  {
+    visibility: visible;
+    transform: scaleX(1);
+  }
+  /* search style */
+  #searchid
+  {
+    width: 312px;
+    height: 35px;
+    border-radius: 5px; 
+    border: 1px solid gray;
+    
+  }
+.divclass
+{
+  border: 1px solid gray;
+  margin: 2px;
+  padding: 5px;
+  
+}
+.mostlikelyclass,.likelyclass,.Possibleclass
+{
+  border: 1px solid gray;
+  margin: 2px;
+  padding: 17px;
+  
+}
+.material-icons
+{
+  font-size: 18px !important;
+}
+
+/* human updated */
+.ovel
+{
+  height: 10px;
+  width: 10px;
+  color: orange;
+}
+/* navbar for Master account details */
+nav#DASnavbar {
+  background:white;
+  position:relative;
+  width:100%;
+  height: 25px;
+}
+#btn-nav-previous {
+  text-align: center;
+
+  cursor: pointer;
+  /* font-size: 5px; */
+  position: absolute;
+  left: 0px;
+  /* padding: 9px 12px; */
+  background: white;
+  fill:#FFF;
+}
+#btn-nav-next {
+  text-align: center;
+
+  cursor: pointer;
+  /* font-size: 5px; */
+  position: absolute;
+  right: 0px;
+  /* padding: 9px 12px; */
+  background: white;
+  fill:#FFF;
+}
+.menu-inner-box
+{ 
+  width: 100%;
+  white-space: nowrap;
+  margin: 0 auto;
+  overflow: hidden;
+  padding: 0px 54px;
+  box-sizing: border-box;
+  text-align: center;
+  
+}
+.menu
+{  
+  padding:0;
+  margin: 0;
+  list-style-type: none;
+  display:block;
+  text-align: center;
+}
+.menu-item
+{
+  height:100%;
+  padding: 0px 25px;
+  color:black;
+  display:inline;
+  margin:0 auto;
+
+
+  text-decoration:none;
+  text-align:center;
+  white-space:no-wrap;
+}
+.last-item{
+margin-right: 50px;
+}
+a.menu-item:hover
+{
+  text-decoration: none !important;
+  color: black !important;
+}
+.active {
+  color: green;
+  text-decoration: underline;
+}
+
+
+
+/* submit button */
+#submit
+{
+  background-color: #3E9D66;
+  color: white;
+  border: 1px solid gray;
+  border-radius: 3px;
+  margin-left: 325px;
+}
+.content
+{
+  font-size: small;
+  color: gray;
+  margin-left: 160px;
+}
+
+/* vertical scroll bar */
+header
+{
+	font-family: 'Lobster', cursive;
+	text-align: center;
+	font-size: 25px;	
+}
+
+#info
+{
+	font-size: 18px;
+	color: #555;
+	text-align: center;
+
+}
+
+a{
+	color: #074E8C;
+}
+
+.scrollbar
+{
+
+	float: left;
+	height: 500px;
+	width: 325px;
+
+	overflow-y: scroll;
+
+}
+
+#DASscrollbar::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	background-color: #F5F5F5;
+	border-radius: 10px;
+}
+
+#DASscrollbar::-webkit-scrollbar
+{
+	width: 10px;
+	background-color: #F5F5F5;
+}
+
+#DASscrollbar::-webkit-scrollbar-thumb
+{
+	background-color: #3366FF;
+	border-radius: 10px;
+	background-image: -webkit-linear-gradient(0deg,
+	                                          rgba(255, 255, 255, 0.5) 25%,
+											  transparent 25%,
+											  transparent 50%,
+											  rgba(255, 255, 255, 0.5) 50%,
+											  rgba(255, 255, 255, 0.5) 75%,
+											  transparent 75%,
+											  transparent)
+
+}

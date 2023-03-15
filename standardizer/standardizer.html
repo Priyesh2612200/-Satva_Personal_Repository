@@ -1,0 +1,161 @@
+<html lang="en" >
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Standardizer</title>
+    <link rel="stylesheet" href="./Bootstrap_setup/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./standardizer.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+<body >
+
+
+
+   
+        <!-- navbar -->
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">
+                    <img src="./images/Standardizer_logo.png" alt="" id="standardizerlogoid">  
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarstandardizer"
+                    aria-controls="navbarstandardizer" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarstandardizer">
+                    <div class="navbar-nav">
+                        <a class="nav-link active" aria-current="page" href="">CoA</a>
+                    </div>
+                        <ul class="navbar-nav justify-content-end">
+                            <li class="nav-item me-3">
+                                <img id="adminimage" class="rounded" src="./images/admin2.png">
+                              </li>
+                      
+                        </ul>
+                
+                </div>
+            </div>
+        </nav>
+        <div class="container-fluid">
+        <!-- 7-buttons -->
+        <div class="row">
+            <div class="col-8">
+                <div class="btngroup">
+                    <button type="button" class="btn active" id="assetsBtn">Assets</button>
+                    <button type="button" class="btn" id="liabilityBtn">Liability</button>
+                    <button type="button" class="btn" id="equityBtn">Equity/Capital</button>
+                    <button type="button" class="btn" id="revenueBtn">Revenue</button>
+                    <button type="button" class="btn" id="cogsBtn">CoGS</button>
+                    <button type="button" class="btn" id="gAndAExpensesBtn">G&A Expenses</button>
+                    <button type="button" class="btn" id="otherRevenueExpensesBtn">Other Revenue & Expense</button>
+            
+                   
+                </div>
+            </div>
+                <div class="col-4">
+                    <button type="button" class="mt-4" id="submit">Submit</button>
+                    <p class="content">Last Updated on 08-07-2023 at 10:45am</p>
+                </div>
+           
+        </div>
+    </div>
+     
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12">
+                    <i class="fa fa-circle-o mt-3" style="color: orange;"> Human Updated</i>
+    
+                </div>
+            </div>
+    
+            <div class="row">
+                <div class="col-12 col-sm-3 col-md-3 col-lg-3 col-xl-3 info">
+                    Source Account Structure
+                    <div class="BSA">Balance Sheet Accounts</div>
+                    <div id="SAStable"></div>
+                </div>
+                <div class="col-12 col-sm-2 col-md-2 col-lg-2 col-xl-2 info">
+                    Likely Destination Account
+                    <div class="mostlikely">Most Likely</div>
+                    <div id="mostlikelyid"></div>
+                </div>
+                <div class="col-12 col-sm-2 col-md-2 col-lg-2 col-xl-2 info">
+                    <div class="likely">Likely</div>
+                    <div id="likelyid"></div>
+                </div>
+                <div class="col-12 col-sm-2 col-md-2 col-lg-2 col-xl-2 info">
+                    <div class="possible">Possible</div>
+                    <div id="Possibleid"></div>
+                </div>
+                <div class="col-12 col-sm-3 col-md-3 col-lg-3 col-xl-3 info">
+                    Destination Account Structure
+                    <div class="BSAA">Balance Sheet Accounts</div>
+
+
+                     <!-- vertical scroll bar -->
+                  <div class="scrollbar" id="DASscrollbar">
+                    <div class="force-overflow">
+
+
+                         <!-- navbar -->
+                    <nav id="DASnavbar" class="arrow">
+                        <div id="btn-nav-previous" style="fill: black">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22"
+                                    viewBox="0 0 24 24">
+                              <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z" />
+                              <path d="M0 0h24v24H0z" fill="none" />
+                            </svg>
+                          </div>
+                    <div id="btn-nav-next" style="fill: black">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22"
+                                viewBox="0 0 24 24">
+                          <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z" />
+                          <path d="M0 0h24v24H0z" fill="none" />
+                        </svg>
+                      </div>
+                      <div class="menu-inner-box">
+                        <div class="menu">
+                          <a class="menu-item" data-value="All" href="#">All</a>
+                          <a class="menu-item" data-value="Assets" href="#">Assets</a>
+                          <a class="menu-item" data-value="Liabilities" href="#">Liability</a>
+                          <a class="menu-item" data-value="Equity/Capital" href="#">Equity/Capital</a>
+                          <a class="menu-item" data-value="Revenue" href="#">Revenue</a>
+                          <a class="menu-item" data-value="CoGS" href="#">CoGS</a>
+                          <a class="menu-item" data-value="Expense" href="#">G&A Expenses</a>
+                          <a class="menu-item" data-value="Other" href="#">Other Revenue & Expense</a>
+                        </div>
+                      </div>
+                    </nav>
+    
+                    <!-- <i class="fa fa-search"></i>  -->
+                    <input id="searchid" type="text" placeholder="Search Account Here..." >
+                    
+                  
+                    <!-- <table id="mastertable">
+                    <tbody>
+                       
+                    </tbody>
+                  </table> -->
+             
+                <div id="masterdata"></div>
+                     </div>
+                  </div>
+              
+    
+                   
+          
+                </div>
+            </div>
+        </div>
+  
+
+</body>
+<script src="./Bootstrap_setup/jquery-3.6.3.min.js"></script>
+<script src="./Bootstrap_setup/js/bootstrap.min.js"></script>
+<script src="./standardizer.js"></script>
+
+</html>
