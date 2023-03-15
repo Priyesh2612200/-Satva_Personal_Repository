@@ -19,6 +19,7 @@
   height: 50px;
   width: 50px;
   margin-left: 950px;
+  border-radius: 40px !important;
 }
 .navbar{
   padding: 0%;
@@ -284,7 +285,7 @@ a{
 
 #DASscrollbar::-webkit-scrollbar-thumb
 {
-	background-color: #3366FF;
+	background-color: #51B7E7;
 	border-radius: 10px;
 	background-image: -webkit-linear-gradient(0deg,
 	                                          rgba(255, 255, 255, 0.5) 25%,

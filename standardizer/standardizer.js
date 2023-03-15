@@ -1,5 +1,5 @@
 const jsonData = [];//global declare
-
+const jsonDataforSAS=[];
 // search
 
 $(document).ready(function(){
@@ -49,34 +49,84 @@ buttons.forEach(button => {
 
 
 // source  account structure
-fetch("./Standard-CofA.csv")
-  .then(res => res.text())
-  .then(data => {
-    const result = data.split(/\r?\n|\r/).map(e => e.split(",")).splice(1);
-    const jsonData = [];
+// fetch("./Standard-CofA.csv")
+//   .then(res => res.text())
+//   .then(data => {
+//     const result = data.split(/\r?\n|\r/).map(e => e.split(",")).splice(1);
+//     const jsonDataforSAS = [];
 
-    result.forEach(e => {
-      const obj = {
-        Type: e[0],
-        Group: e[1],
-        SubGroup: e[2],
-        Number: e[3],
-        Name: e[4],
-        Keywords: e[5],
-        Description: e[6]
+//     result.forEach(e => {
+//       const obj = {
+//         Type: e[0],
+//         Group: e[1],
+//         SubGroup: e[2],
+//         Number: e[3],
+//         Name: e[4],
+//         Keywords: e[5],
+//         Description: e[6]
      
-      };
+//       };
 
-      jsonData.push(obj);
-    });
-    console.log(jsonData);
-    jsonData.forEach(e => {
-      $("#SAStable").append("<div class='divclass d-flex justify-content-between'>" + e.Number + " " + e.Name + "<i class='material-icons md-10'>done_all history</i></div>");
-    });
+//       jsonDataforSAS.push(obj);
+//     });
+//     console.log(jsonDataforSAS);
+//     jsonDataforSAS.forEach(e => {
+//       $("#SAStable").append("<div class='divclass d-flex justify-content-between'>" + e.Number + " " + e.Name + "<i class='material-icons md-10'>done_all history</i></div>");
+//     });
+//   });
+
+ //  source  account structure navbar click functionality
+ $('.accounttypebtn').click(function(){
+  debugger
+  var navbarvalue = $(this).data("value");
+  const sourceaccountnavbarmaplist={
+    "Assets":"Assets",
+    "Liability":"Liabilities",
+    "Equity/Capital":"Equity",
+    "Revenue":"Revenue",
+    "CoGS":"COGS",
+    "G&A Expenses":"Expense",
+    "Other Revenue & Expense":"Other Rev & Exp"
+  };
+  listmatchonnavbar=sourceaccountnavbarmaplist[navbarvalue];
+  $("#SAStable").html('');
+fetch("./Standard-CofA.csv")
+.then(res => res.text())
+.then(data => {
+  const result = data.split(/\r?\n|\r/).map(e => e.split(","));
+  const jsonDataforSAS = [];
+
+  result.forEach(e => {
+    const obj = {
+      Type: e[0],
+      Group: e[1],
+      SubGroup: e[2],
+      Number: e[3],
+      Name: e[4],
+      Keywords: e[5],
+      Description: e[6]
+   
+    };
+
+    jsonDataforSAS.push(obj);
   });
+  console.log(jsonDataforSAS);
+});
+jsonDataforSAS.forEach(e => {
+
+  if(e.Type == listmatchonnavbar){
+    if(e.Number != ""){
+      $("#SAStable").append("<div class='divclass d-flex justify-content-between'>" + e.Number + " " + e.Name + "<i class='material-icons md-10'>done_all history</i></div>");
+
+    }
+  } 
+  
+});
+
+});
 
 
- // / destination  account structure navbar click functionality
+ //  destination  account structure navbar click functionality
   $('.menu-item').click(function(){
     var navbarvalue = $(this).data("value");
     const Masternavbarmaplist={
@@ -90,7 +140,8 @@ fetch("./Standard-CofA.csv")
     };
     listmatchonnavbar=Masternavbarmaplist[navbarvalue];
     $("#masterdata").html('');
-    // / destination  account structure
+
+    //  destination  account structure
     fetch("./MasterChartOfAcounts - Sheet1.csv")
   .then(res => res.text())
   .then(data => {
@@ -123,7 +174,7 @@ fetch("./Standard-CofA.csv")
     jsonData.forEach(e => {
 
       if(e.AccountTypeName == listmatchonnavbar){
-        if(e.Number != ""){
+        if(e.AccountCode != ""){
           $("#masterdata").append("<div class='divclass d-flex'><i class='material-icons'>drag_indicator</i>" + e.AccountCode + "--" + e.AccountName + "</div>");
 
           $('#mostlikelyid').append("<div class='mostlikelyclass'>"+ " " +"</div>")
@@ -133,4 +184,20 @@ fetch("./Standard-CofA.csv")
       } 
       
     });
-  })
+
+  });
+
+  //all data navbar value
+  $('.all-data').click(function(){
+    jsonData.forEach(e => {
+      if(e.Number != ""){
+        $("#masterdata").append("<div class='divclass d-flex'><i class='material-icons'>drag_indicator</i>" + e.AccountCode + "--" + e.AccountName + "</div>");
+      }
+    });
+  });
+
+
+
+
+
+  
