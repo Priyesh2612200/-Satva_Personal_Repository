@@ -31,16 +31,24 @@
     background-color: #F2F2F2;
     color: black;
     text-decoration: none !important;
+
   }
-  
+ 
   .btn.active {
     background-color:#51B7E7;
     color: white;
   }
+
   .btngroup
   {
     margin-left: 10px;
     margin-top: 20px;
+  }
+  .btn:hover {
+    background-color: #F2F2F2;
+  }
+  .btn.active:hover{
+    background-color:#51B7E7;
   }
   /* 5grid style */
   .info
@@ -115,7 +123,7 @@
   /* search style */
   #searchid
   {
-    width: 312px;
+    width: 320px;
     height: 35px;
     border-radius: 5px; 
     border: 1px solid gray;
@@ -126,14 +134,26 @@
   border: 1px solid gray;
   margin: 2px;
   padding: 5px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
   
+}
+.divclassSAS
+{
+  border: 1px solid gray;
+  margin: 2px;
+  padding: 5px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;  
 }
 .mostlikelyclass,.likelyclass,.Possibleclass
 {
   border: 1px solid gray;
   margin: 2px;
-  padding: 17px;
-  
+  padding: 14px;
+
 }
 .material-icons
 {
@@ -240,12 +260,6 @@ a.menu-item:hover
 }
 
 /* vertical scroll bar */
-header
-{
-	font-family: 'Lobster', cursive;
-	text-align: center;
-	font-size: 25px;	
-}
 
 #info
 {
@@ -255,16 +269,14 @@ header
 
 }
 
-a{
-	color: #074E8C;
-}
+
 
 .scrollbar
 {
 
 	float: left;
 	height: 500px;
-	width: 325px;
+	width: 328px;
 
 	overflow-y: scroll;
 
@@ -279,7 +291,7 @@ a{
 
 #DASscrollbar::-webkit-scrollbar
 {
-	width: 10px;
+	width: 5px;
 	background-color: #F5F5F5;
 }
 
@@ -288,7 +300,7 @@ a{
 	background-color: #51B7E7;
 	border-radius: 10px;
 	background-image: -webkit-linear-gradient(0deg,
-	                                          rgba(255, 255, 255, 0.5) 25%,
+	                                          rgba(255, 255, 255, 0.5) 10%,
 											  transparent 25%,
 											  transparent 50%,
 											  rgba(255, 255, 255, 0.5) 50%,
@@ -297,3 +309,11 @@ a{
 											  transparent)
 
 }
+/* row padding */
+.row > * {
+ 
+  padding-right: calc(var(--bs-gutter-x) * 0.1);
+  padding-left: calc(var(--bs-gutter-x) * 0.3);
+ 
+}
+
