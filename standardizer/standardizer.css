@@ -62,7 +62,7 @@
   {
     background-color:#4BA5E5;
     padding: 5px;
-    border-radius: 5px;
+    border-radius: 3px;
     margin-top: 10px;
     color: white;
   }
@@ -70,7 +70,7 @@
   {
     background-color:#53C1CD;
     padding: 5px;
-    border-radius: 5px;
+    border-radius: 3px;
     margin-top: 10px;
     color: white;
   }
@@ -78,7 +78,7 @@
   {
     background-color:#58CDD7;
     padding: 5px;
-    border-radius: 5px;
+    border-radius: 3px;
     margin-top: 28px;
     color: white;
   }
@@ -86,7 +86,7 @@
   {
     background-color:#7FDFE6;
     padding: 5px;
-    border-radius: 5px;
+    border-radius: 3px;
     margin-top: 28px;
     color: white;
   }
@@ -94,8 +94,9 @@
   {
     background-color:#3E9D66;
     padding: 5px;
-    border-radius: 5px;
+    border-radius: 3px;
     margin-top: 10px;
+    margin-right: 13px;
     color: white;
   }
   /* underline */
@@ -123,16 +124,20 @@
   /* search style */
   #searchid
   {
-    width: 320px;
+    width: 313px;
     height: 35px;
-    border-radius: 5px; 
+    margin-right: 10px;
+    /* border-radius: 5px;  */
     border: 1px solid gray;
+    border-top: none;
+
     
   }
-.divclass
+.masterdataclass
 {
   border: 1px solid gray;
-  margin: 2px;
+  margin-top: 5px;
+  margin-right: 10px;
   padding: 5px;
   white-space: nowrap;
   overflow: hidden;
@@ -142,7 +147,7 @@
 .divclassSAS
 {
   border: 1px solid gray;
-  margin: 2px;
+  margin-top: 5px;
   padding: 5px;
   white-space: nowrap;
   overflow: hidden;
@@ -151,13 +156,15 @@
 .mostlikelyclass,.likelyclass,.Possibleclass
 {
   border: 1px solid gray;
-  margin: 2px;
-  padding: 14px;
+  margin-top: 5px;
+  padding: 16px;
 
 }
 .material-icons
 {
-  font-size: 18px !important;
+  font-size: 18px !important; 
+
+
 }
 
 /* human updated */
@@ -171,8 +178,11 @@
 nav#DASnavbar {
   background:white;
   position:relative;
-  width:100%;
+  width:97%;
   height: 25px;
+  margin-top: 6px;
+  border: 1px solid gray;
+
 }
 #btn-nav-previous {
   text-align: center;
@@ -202,9 +212,10 @@ nav#DASnavbar {
   white-space: nowrap;
   margin: 0 auto;
   overflow: hidden;
-  padding: 0px 54px;
+  /* padding: 0px 54px; */
   box-sizing: border-box;
   text-align: center;
+  
   
 }
 .menu
@@ -218,12 +229,9 @@ nav#DASnavbar {
 .menu-item
 {
   height:100%;
-  padding: 0px 25px;
+  padding:21px;
   color:black;
   display:inline;
-  margin:0 auto;
-
-
   text-decoration:none;
   text-align:center;
   white-space:no-wrap;
