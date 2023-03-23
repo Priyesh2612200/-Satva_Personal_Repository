@@ -1,0 +1,16 @@
+D:\Priyesh\C#\PracticeOne\bin\Debug\PracticeOne.exe.config
+D:\Priyesh\C#\PracticeOne\bin\Debug\PracticeOne.exe
+D:\Priyesh\C#\PracticeOne\bin\Debug\PracticeOne.pdb
+D:\Priyesh\C#\PracticeOne\obj\Debug\Day2taskwork.csproj.AssemblyReference.cache
+D:\Priyesh\C#\PracticeOne\obj\Debug\Day2taskwork.csproj.SuggestedBindingRedirects.cache
+D:\Priyesh\C#\PracticeOne\obj\Debug\Day2taskwork.csproj.CoreCompileInputs.cache
+D:\Priyesh\C#\PracticeOne\obj\Debug\PracticeOne.exe
+D:\Priyesh\C#\PracticeOne\obj\Debug\PracticeOne.pdb
+D:\Priyesh\C#\Day2\bin\Debug\PracticeOne.exe.config
+D:\Priyesh\C#\Day2\bin\Debug\PracticeOne.exe
+D:\Priyesh\C#\Day2\bin\Debug\PracticeOne.pdb
+D:\Priyesh\C#\Day2\obj\Debug\Day2taskwork.csproj.AssemblyReference.cache
+D:\Priyesh\C#\Day2\obj\Debug\Day2taskwork.csproj.SuggestedBindingRedirects.cache
+D:\Priyesh\C#\Day2\obj\Debug\Day2taskwork.csproj.CoreCompileInputs.cache
+D:\Priyesh\C#\Day2\obj\Debug\PracticeOne.exe
+D:\Priyesh\C#\Day2\obj\Debug\PracticeOne.pdb
