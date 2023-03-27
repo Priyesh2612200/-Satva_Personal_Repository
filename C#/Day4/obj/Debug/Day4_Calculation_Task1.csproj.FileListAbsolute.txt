@@ -1,0 +1,8 @@
+D:\Priyesh\C#\Day4\bin\Debug\Day4.exe.config
+D:\Priyesh\C#\Day4\bin\Debug\Day4.exe
+D:\Priyesh\C#\Day4\bin\Debug\Day4.pdb
+D:\Priyesh\C#\Day4\obj\Debug\Day4_Calculation_Task1.csproj.AssemblyReference.cache
+D:\Priyesh\C#\Day4\obj\Debug\Day4_Calculation_Task1.csproj.SuggestedBindingRedirects.cache
+D:\Priyesh\C#\Day4\obj\Debug\Day4_Calculation_Task1.csproj.CoreCompileInputs.cache
+D:\Priyesh\C#\Day4\obj\Debug\Day4.exe
+D:\Priyesh\C#\Day4\obj\Debug\Day4.pdb

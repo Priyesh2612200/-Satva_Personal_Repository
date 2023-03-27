@@ -1,0 +1,8 @@
+D:\Priyesh\C#\Day4_Studentlist_Task2\bin\Debug\Day4_Studentlist_Task2.exe.config
+D:\Priyesh\C#\Day4_Studentlist_Task2\bin\Debug\Day4_Studentlist_Task2.exe
+D:\Priyesh\C#\Day4_Studentlist_Task2\bin\Debug\Day4_Studentlist_Task2.pdb
+D:\Priyesh\C#\Day4_Studentlist_Task2\obj\Debug\Day4_Studentlist_Task2.csproj.AssemblyReference.cache
+D:\Priyesh\C#\Day4_Studentlist_Task2\obj\Debug\Day4_Studentlist_Task2.csproj.SuggestedBindingRedirects.cache
+D:\Priyesh\C#\Day4_Studentlist_Task2\obj\Debug\Day4_Studentlist_Task2.csproj.CoreCompileInputs.cache
+D:\Priyesh\C#\Day4_Studentlist_Task2\obj\Debug\Day4_Studentlist_Task2.exe
+D:\Priyesh\C#\Day4_Studentlist_Task2\obj\Debug\Day4_Studentlist_Task2.pdb
