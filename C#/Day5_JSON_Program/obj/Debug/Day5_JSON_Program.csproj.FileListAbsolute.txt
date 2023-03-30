@@ -1,0 +1,12 @@
+D:\Priyesh\C#\Day5_JSON_Program\bin\Debug\Day5_JSON_Program.exe.config
+D:\Priyesh\C#\Day5_JSON_Program\bin\Debug\Day5_JSON_Program.exe
+D:\Priyesh\C#\Day5_JSON_Program\bin\Debug\Day5_JSON_Program.pdb
+D:\Priyesh\C#\Day5_JSON_Program\bin\Debug\Json.Net.dll
+D:\Priyesh\C#\Day5_JSON_Program\bin\Debug\Newtonsoft.Json.dll
+D:\Priyesh\C#\Day5_JSON_Program\bin\Debug\Newtonsoft.Json.xml
+D:\Priyesh\C#\Day5_JSON_Program\obj\Debug\Day5_JSON_Program.csproj.AssemblyReference.cache
+D:\Priyesh\C#\Day5_JSON_Program\obj\Debug\Day5_JSON_Program.csproj.SuggestedBindingRedirects.cache
+D:\Priyesh\C#\Day5_JSON_Program\obj\Debug\Day5_JSON_Program.csproj.CoreCompileInputs.cache
+D:\Priyesh\C#\Day5_JSON_Program\obj\Debug\Day5_JSON_Program.csproj.CopyComplete
+D:\Priyesh\C#\Day5_JSON_Program\obj\Debug\Day5_JSON_Program.exe
+D:\Priyesh\C#\Day5_JSON_Program\obj\Debug\Day5_JSON_Program.pdb

@@ -1,0 +1,8 @@
+D:\Priyesh\C#\Day7_Prog1\bin\Debug\Day7_Prog1.exe.config
+D:\Priyesh\C#\Day7_Prog1\bin\Debug\Day7_Prog1.exe
+D:\Priyesh\C#\Day7_Prog1\bin\Debug\Day7_Prog1.pdb
+D:\Priyesh\C#\Day7_Prog1\obj\Debug\Day7_Prog1.csproj.AssemblyReference.cache
+D:\Priyesh\C#\Day7_Prog1\obj\Debug\Day7_Prog1.csproj.SuggestedBindingRedirects.cache
+D:\Priyesh\C#\Day7_Prog1\obj\Debug\Day7_Prog1.csproj.CoreCompileInputs.cache
+D:\Priyesh\C#\Day7_Prog1\obj\Debug\Day7_Prog1.exe
+D:\Priyesh\C#\Day7_Prog1\obj\Debug\Day7_Prog1.pdb

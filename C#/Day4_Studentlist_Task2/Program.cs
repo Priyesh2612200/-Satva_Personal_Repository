@@ -1,127 +1,239 @@
-﻿using System;
+﻿
+using Day4TaskStudent;
+using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using static Day4_Studentlist_Task2.Program;
+using System.Text.RegularExpressions;
 
-namespace Day4_Studentlist_Task2
+namespace Day4TaskStudent
 {
-    public class Program
+    class Student
     {
-        public class Student
+        private int studentID;
+        private string studentName;
+        private string studentDOB;
+        private string studentEmail;
+        private double studentGPA;
+
+        public Student(Student snew)                   //Copy Constructor
         {
-
-            public int studentID { get; set; }
-            public string studentName { get; set; }
-            public string studentDOB { get; set; }
-            public int studentRollNo { get; set; }
-            public string studentEmail { get; set; }
-            public double studentGPASem1 { get; set; }
-            public double studentGPASem2 { get; set; }
-            public double studentGPASem3 { get; set; }
-            public double studentGPASem4 { get; set; }
-            public double studentGPASem5 { get; set; }
-
+            studentID = snew.studentID;
+            studentName = snew.studentName;
+            studentDOB = snew.studentDOB;
+            studentEmail = snew.studentEmail;
+            studentGPA = snew.studentGPA;
         }
+
+        public int StudentID
+        {
+            get { return studentID; }
+            set { studentID = value; }
+        }
+
+        public string StudentName
+        {
+            get { return studentName; }
+            set { studentName = value; }
+        }
+
+        public string StudentDOB
+        {
+            get { return studentDOB; }
+            set { studentDOB = value; }
+        }
+
+        public string StudentEmail
+        {
+            get { return studentEmail; }
+            set { studentEmail = value; }
+        }
+
+        public double StudentGPA
+        {
+            get { return studentGPA; }
+            set { studentGPA = value; }
+        }
+
         public static void Main(string[] args)
         {
-            Student[] students = new Student[3];
+
+      
+
+            Console.WriteLine("           Enter 3 Student Details :  \n");
+            Student s1 = new Student();
+            Student s2 = new Student();
+            Student s3 = new Student();
+
+            double[] studentArr = new double[3];
+
+            Console.WriteLine("---------------Student 1 Data-----------------");
+            s1.DataGet();
+            studentArr[0] = s1.studentGPA;
+
+            Console.ReadLine();
+
+            Console.WriteLine("---------------Student 2 Data-----------------");
+            s2.DataGet();
+            studentArr[1] = s2.studentGPA;
+
+            Console.ReadLine();
+
+            Console.WriteLine("---------------Student 3 Data-----------------");
+            s3.DataGet();
+            studentArr[2] = s3.studentGPA;
 
 
-            for (int i = 0; i < 3; i++)
-            {
-                Console.WriteLine($"Enter information for student {i + 1}");
+            s1.Display(); Console.WriteLine("--------------------------------");
+            s2.Display(); Console.WriteLine("--------------------------------");
+            s3.Display(); Console.WriteLine("--------------------------------");
 
-                Console.Write("studentID: ");
-                int studentid = int.Parse(Console.ReadLine());
+            double highestCGPA = studentArr.Max();
 
-                Console.Write("studentName: ");
-                string studentname = Console.ReadLine();
+            //if (highestCGPA == s1.studentGPA)
+            //{
+            //    Console.WriteLine("CR: " + s1.studentName);
+            //}
+            //else if (highestCGPA == s2.studentGPA)
+            //{
+            //    Console.WriteLine("CR: " + s2.studentName);
+            //}
+            //else if (highestCGPA == s3.studentGPA)
+            //{
+            //    Console.WriteLine("CR: " + s3.studentName);
+            //}
 
-                Console.Write("studentDOB: ");
-                string studentdob = Console.ReadLine();
-
-
-                Console.Write("studentRollNo: ");
-                int studentrollno = int.Parse(Console.ReadLine());
-
-                Console.Write("studentEmail: ");
-                string studentemail = Console.ReadLine();
-
-
-                Console.Write("studentGPASem1: ");
-                double studentgpasem1 = double.Parse(Console.ReadLine());
-
-
-                Console.Write("studentGPASem2: ");
-                double studentgpasem2 = double.Parse(Console.ReadLine());
+            List<Student> students = new List<Student>() { s1, s2, s3 };
+            highestCGPA = students.Max(s => s.studentGPA);
+            Student highestCGPAStudent = students.First(s => s.studentGPA == highestCGPA);
+            Console.WriteLine("CR: " + highestCGPAStudent.studentName);
+            Console.WriteLine("--------------------------------");
 
 
-                Console.Write("studentGPASem3: ");
-                double studentgpasem3 = double.Parse(Console.ReadLine());
+            //Operator Overloading
+            Student s4 = s1 + s2 + s3; // Adding s1, s2, and s3 using operator overloading
+            Console.WriteLine("Operator Overloaded s1, s2 and s3 Details");
+            s4.Display(); Console.WriteLine("--------------------------------");
 
 
-                Console.Write("studentGPASem4: ");
-                double studentgpasem4 = double.Parse(Console.ReadLine());
+            // Create a new Student object using the copy constructor
+            Student s5 = new Student(s1);
+            Console.WriteLine("Copy Constructor (Copy of Student 1)");
+            s5.Display(); Console.WriteLine("--------------------------------");
+            Console.ReadLine();
 
-
-                Console.Write("studentGPASem5: ");
-                double studentgpasem5 = double.Parse(Console.ReadLine());
-
-                students[i] = new Student
-                {
-                    studentID = studentid,
-                    studentName = studentname,
-                    studentDOB = studentdob,
-                    studentRollNo = studentrollno,
-                    studentEmail = studentemail,
-                    studentGPASem1 = studentgpasem1,
-                    studentGPASem2 = studentgpasem2,
-                    studentGPASem3 = studentgpasem3,
-                    studentGPASem4 = studentgpasem4,
-                    studentGPASem5 = studentgpasem5,
-
-                };
-            }
-
-            Console.WriteLine("\nStudents Information:");
-            foreach (Student student in students)
-            {
-                Console.WriteLine($"studentID: {student.studentID},studentName: {student.studentName}," +
-                    $"studentDOB: {student.studentDOB},studentRollNo: {student.studentRollNo},studentEmail: {student.studentEmail}," +
-                    $"studentGPASem1: {student.studentGPASem1},studentGPASem2: {student.studentGPASem2},studentGPASem3: {student.studentGPASem3}, " +
-                    $"studentGPASem4: {student.studentGPASem4},studentGPASem5: {student.studentGPASem5}");
-
-
-                Console.WriteLine("\n Students CGPA");
-                double totalCGPA = CalculateTotalCGPA(student);
-                Console.WriteLine("Total CGPA: " + totalCGPA);
-
-                //Console.WriteLine("\n Student highest  CGPA");
-                //double maxCGPA = Maxcgpa(student);
-                //Console.WriteLine("MAX CGPA: " + maxCGPA);
-
-
-
-            }
-          
-            Console.ReadKey();
         }
-        public static double CalculateTotalCGPA(Student student)
+        public static Student operator +(Student s1, Student s2)
         {
-            double totalGPA = (student.studentGPASem1 + student.studentGPASem2 + student.studentGPASem3 + student.studentGPASem4 + student.studentGPASem5) / 5.0;
-            
+            Student result = new Student();
 
-            return totalGPA;
+            result.studentID = s1.studentID + s2.studentID;
+            result.studentName = s1.studentName + " " + s2.studentName;
+            result.studentDOB = s1.studentDOB + " " + s2.studentDOB;
+            result.studentEmail = s1.studentEmail + " " + s2.studentEmail;
+            result.studentGPA = s1.studentGPA + s2.studentGPA;
+
+            return result;
         }
-        //public static double Maxcgpa(Student student)
-        //{
-        //    double totalCGPA = CalculateTotalCGPA(student);
-        //    double maxcgpa = Math.Max(totalCGPA,0);
-        //    return maxcgpa;
-           
 
+        public double[] arr = new double[6];
+        double TotalGPA;
+        public double[] DataGet()
+        {
+            try
+            {
+                Console.Write("Enter Student ID:");
+                studentID = Convert.ToInt32(Console.ReadLine());
+                Console.Write("Enter Student Name:");
+                studentName = Console.ReadLine();
+                Console.Write("Enter Student DOB:");
+                studentDOB = Console.ReadLine();
+                Console.Write("Enter Student Email:");
+                studentEmail = Console.ReadLine();
+
+                calculateCGPA();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            return arr;
+
+        }
+        public double calculateCGPA()
+        {
+            try
+            {
+
+                Console.WriteLine("Please Enter GPA between 1 and 4");
+                for (int i = 1; i <= 5; i++)
+                {
+                    Console.Write("Enter GPA for Semester {0} : ", i);
+
+                    int gpa = Convert.ToInt32(Console.ReadLine());
+                    if (gpa > 4)
+                    {
+
+                        Console.WriteLine("GPA Entered is greater than 4 Default value 3 is set in GPA");
+                        gpa = 3;
+                    }
+                    TotalGPA = gpa + TotalGPA;
+
+                }
+            }
+            catch (ArgumentNullException ex)
+            {
+                Console.WriteLine(ex.Message);
+
+            }
+
+            double CGPA = TotalGPA / 5;
+            studentGPA = CGPA;
+            Console.WriteLine("CGPA = " + CGPA);
+            return studentGPA;
+
+        }
+        public Student()
+        {
+            studentGPA = 3.0;
+        }
+        public static double GetMaxCGPA(Student[] students)
+        {
+            double maxCGPA = 0;
+            foreach (Student s in students)
+            {
+                if (s.studentGPA > maxCGPA)
+                {
+                    maxCGPA = s.studentGPA;
+                }
+            }
+            return maxCGPA;
+        }
+        public void Display()
+        {
+            Console.WriteLine("Student ID     : " + studentID);
+            Console.WriteLine("Student Name   : " + studentName);
+            Console.WriteLine("Student DOB    : " + studentDOB);
+            Console.WriteLine("Student Email  : " + studentEmail);
+            Console.WriteLine("Student CGPA   : " + studentGPA);
+        }
+
+      
+        //public bool ValidateEmail(string email)
+        //{
+        //    Regex regex = new Regex(@"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$");
+        //    Match match = regex.Match(email);
+        //    return match.Success;
+
+        //    string email = studentEmail.Text;
+        //    if (ValidateEmail(email))
+        //    {
+        //        Response.Write(email + " is correct");
+        //    }
+        //    else
+        //    {
+        //        Response.Write(email + " is incorrect");
+        //    }
         //}
     }
 }
+

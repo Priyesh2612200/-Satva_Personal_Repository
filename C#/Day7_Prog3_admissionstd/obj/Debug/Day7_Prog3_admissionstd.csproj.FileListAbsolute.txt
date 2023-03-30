@@ -1,0 +1,8 @@
+D:\Priyesh\C#\Day7_Prog3_admissionstd\bin\Debug\Day7_Prog3_admissionstd.exe.config
+D:\Priyesh\C#\Day7_Prog3_admissionstd\bin\Debug\Day7_Prog3_admissionstd.exe
+D:\Priyesh\C#\Day7_Prog3_admissionstd\bin\Debug\Day7_Prog3_admissionstd.pdb
+D:\Priyesh\C#\Day7_Prog3_admissionstd\obj\Debug\Day7_Prog3_admissionstd.csproj.AssemblyReference.cache
+D:\Priyesh\C#\Day7_Prog3_admissionstd\obj\Debug\Day7_Prog3_admissionstd.csproj.SuggestedBindingRedirects.cache
+D:\Priyesh\C#\Day7_Prog3_admissionstd\obj\Debug\Day7_Prog3_admissionstd.csproj.CoreCompileInputs.cache
+D:\Priyesh\C#\Day7_Prog3_admissionstd\obj\Debug\Day7_Prog3_admissionstd.exe
+D:\Priyesh\C#\Day7_Prog3_admissionstd\obj\Debug\Day7_Prog3_admissionstd.pdb

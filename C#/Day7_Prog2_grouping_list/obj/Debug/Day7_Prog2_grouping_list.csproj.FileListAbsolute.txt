@@ -1,0 +1,8 @@
+D:\Priyesh\C#\Day7_Prog2_grouping_list\bin\Debug\Day7_Prog2_grouping_list.exe.config
+D:\Priyesh\C#\Day7_Prog2_grouping_list\bin\Debug\Day7_Prog2_grouping_list.exe
+D:\Priyesh\C#\Day7_Prog2_grouping_list\bin\Debug\Day7_Prog2_grouping_list.pdb
+D:\Priyesh\C#\Day7_Prog2_grouping_list\obj\Debug\Day7_Prog2_grouping_list.csproj.AssemblyReference.cache
+D:\Priyesh\C#\Day7_Prog2_grouping_list\obj\Debug\Day7_Prog2_grouping_list.csproj.SuggestedBindingRedirects.cache
+D:\Priyesh\C#\Day7_Prog2_grouping_list\obj\Debug\Day7_Prog2_grouping_list.csproj.CoreCompileInputs.cache
+D:\Priyesh\C#\Day7_Prog2_grouping_list\obj\Debug\Day7_Prog2_grouping_list.exe
+D:\Priyesh\C#\Day7_Prog2_grouping_list\obj\Debug\Day7_Prog2_grouping_list.pdb
