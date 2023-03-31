@@ -1,0 +1,12 @@
+D:\Priyesh\C#\Day8_Employee_record_store_in_json\bin\Debug\Day8_Employee_record_store_in_json.exe.config
+D:\Priyesh\C#\Day8_Employee_record_store_in_json\bin\Debug\Day8_Employee_record_store_in_json.exe
+D:\Priyesh\C#\Day8_Employee_record_store_in_json\bin\Debug\Day8_Employee_record_store_in_json.pdb
+D:\Priyesh\C#\Day8_Employee_record_store_in_json\bin\Debug\Newtonsoft.Json.dll
+D:\Priyesh\C#\Day8_Employee_record_store_in_json\bin\Debug\Newtonsoft.Json.xml
+D:\Priyesh\C#\Day8_Employee_record_store_in_json\obj\Debug\Day8_Employee_record_store_in_json.csproj.AssemblyReference.cache
+D:\Priyesh\C#\Day8_Employee_record_store_in_json\obj\Debug\Day8_Employee_record_store_in_json.csproj.SuggestedBindingRedirects.cache
+D:\Priyesh\C#\Day8_Employee_record_store_in_json\obj\Debug\Day8_Employee_record_store_in_json.csproj.CoreCompileInputs.cache
+D:\Priyesh\C#\Day8_Employee_record_store_in_json\obj\Debug\Day8_Employee_record_store_in_json.csproj.CopyComplete
+D:\Priyesh\C#\Day8_Employee_record_store_in_json\obj\Debug\Day8_Employee_record_store_in_json.exe
+D:\Priyesh\C#\Day8_Employee_record_store_in_json\obj\Debug\Day8_Employee_record_store_in_json.pdb
+D:\Priyesh\C#\Day8_Employee_record_store_in_json\bin\Debug\System.ComponentModel.Annotations.dll
