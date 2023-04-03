@@ -1,0 +1,8 @@
+D:\Priyesh\C#\Day1_OOPS_ROI_cal\bin\Debug\Day1_OOPS_ROI_cal.exe.config
+D:\Priyesh\C#\Day1_OOPS_ROI_cal\bin\Debug\Day1_OOPS_ROI_cal.exe
+D:\Priyesh\C#\Day1_OOPS_ROI_cal\bin\Debug\Day1_OOPS_ROI_cal.pdb
+D:\Priyesh\C#\Day1_OOPS_ROI_cal\obj\Debug\Day1_OOPS_ROI_cal.csproj.AssemblyReference.cache
+D:\Priyesh\C#\Day1_OOPS_ROI_cal\obj\Debug\Day1_OOPS_ROI_cal.csproj.SuggestedBindingRedirects.cache
+D:\Priyesh\C#\Day1_OOPS_ROI_cal\obj\Debug\Day1_OOPS_ROI_cal.csproj.CoreCompileInputs.cache
+D:\Priyesh\C#\Day1_OOPS_ROI_cal\obj\Debug\Day1_OOPS_ROI_cal.exe
+D:\Priyesh\C#\Day1_OOPS_ROI_cal\obj\Debug\Day1_OOPS_ROI_cal.pdb
