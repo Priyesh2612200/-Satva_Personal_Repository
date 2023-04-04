@@ -1,0 +1,8 @@
+D:\Priyesh\C#\Day2_OOPS_Baic_Structure_Demo_HMS\bin\Debug\Day2_OOPS_Baic_Structure_Demo_HMS.exe.config
+D:\Priyesh\C#\Day2_OOPS_Baic_Structure_Demo_HMS\bin\Debug\Day2_OOPS_Baic_Structure_Demo_HMS.exe
+D:\Priyesh\C#\Day2_OOPS_Baic_Structure_Demo_HMS\bin\Debug\Day2_OOPS_Baic_Structure_Demo_HMS.pdb
+D:\Priyesh\C#\Day2_OOPS_Baic_Structure_Demo_HMS\obj\Debug\Day2_OOPS_Baic_Structure_Demo_HMS.csproj.AssemblyReference.cache
+D:\Priyesh\C#\Day2_OOPS_Baic_Structure_Demo_HMS\obj\Debug\Day2_OOPS_Baic_Structure_Demo_HMS.csproj.SuggestedBindingRedirects.cache
+D:\Priyesh\C#\Day2_OOPS_Baic_Structure_Demo_HMS\obj\Debug\Day2_OOPS_Baic_Structure_Demo_HMS.csproj.CoreCompileInputs.cache
+D:\Priyesh\C#\Day2_OOPS_Baic_Structure_Demo_HMS\obj\Debug\Day2_OOPS_Baic_Structure_Demo_HMS.exe
+D:\Priyesh\C#\Day2_OOPS_Baic_Structure_Demo_HMS\obj\Debug\Day2_OOPS_Baic_Structure_Demo_HMS.pdb

@@ -1,0 +1,16 @@
+C:\priyesh\Day9_2\Day9_2\bin\Debug\Day9_2.exe.config
+C:\priyesh\Day9_2\Day9_2\bin\Debug\Day9_2.exe
+C:\priyesh\Day9_2\Day9_2\bin\Debug\Day9_2.pdb
+C:\priyesh\Day9_2\Day9_2\obj\Debug\Day9_2.csproj.AssemblyReference.cache
+C:\priyesh\Day9_2\Day9_2\obj\Debug\Day9_2.csproj.SuggestedBindingRedirects.cache
+C:\priyesh\Day9_2\Day9_2\obj\Debug\Day9_2.csproj.CoreCompileInputs.cache
+C:\priyesh\Day9_2\Day9_2\obj\Debug\Day9_2.exe
+C:\priyesh\Day9_2\Day9_2\obj\Debug\Day9_2.pdb
+D:\Priyesh\C#\Day9_C\Day9_C\Day9_2\bin\Debug\Day9_2.exe.config
+D:\Priyesh\C#\Day9_C\Day9_C\Day9_2\bin\Debug\Day9_2.exe
+D:\Priyesh\C#\Day9_C\Day9_C\Day9_2\bin\Debug\Day9_2.pdb
+D:\Priyesh\C#\Day9_C\Day9_C\Day9_2\obj\Debug\Day9_2.csproj.AssemblyReference.cache
+D:\Priyesh\C#\Day9_C\Day9_C\Day9_2\obj\Debug\Day9_2.csproj.SuggestedBindingRedirects.cache
+D:\Priyesh\C#\Day9_C\Day9_C\Day9_2\obj\Debug\Day9_2.csproj.CoreCompileInputs.cache
+D:\Priyesh\C#\Day9_C\Day9_C\Day9_2\obj\Debug\Day9_2.exe
+D:\Priyesh\C#\Day9_C\Day9_C\Day9_2\obj\Debug\Day9_2.pdb
