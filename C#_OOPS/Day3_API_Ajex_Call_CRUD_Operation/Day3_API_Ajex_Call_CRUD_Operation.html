@@ -1,0 +1,165 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API_Ajex_Call_CRUD_Operation</title>
+    <link rel="stylesheet" href="../Bootstrap_setup/css/bootstrap.min.css">
+</head>
+
+
+<body>
+    <!-- <div id="content"></div> -->
+    <div class="container">
+        <div class="row text-xl-center bg-light ">
+            <h2>API Crud Operation</h2>
+        </div>
+        <div class="row mt-5">
+            <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6">
+                <label for="startdate" class="form-label">StartDate:</label><br>
+                <input type="date" class="form-control" id="startdate" name="startdate" required>
+            </div>
+            <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6">
+                <label for="enddate" class="form-label">EndDate:</label><br>
+                <input type="date" class="form-control" id="enddate" name="enddate" required>
+            </div>
+        </div>
+        <div class="row mt-3">
+            <div class="col-12">
+                <button class="btn btn-primary" type="submit">Get Data</button>
+            </div>
+        </div>
+        <div class="row mt-3">
+            <div class="col-12 text-end">
+                <!-- <button class="btn btn-success" type="submit">ADD NEW DATA</button> -->
+                <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    ADD NEW DATA
+                </button>
+            </div>
+        </div>
+
+        <div class="container mt-3">
+            <!-- <table class="table" id="apidate">
+                <tr>
+                    <th>Eventtitle</th>
+                    <th>StartDate</th>
+                    <th>EndDate</th>
+                    <th>EventDescription</th>
+                    <th>EventPriority</th>
+                    <th>Action</th>
+                </tr>
+            </table> -->
+            <table id="myTable">
+                <thead>
+                  <tr>
+                    <th>Column 1</th>
+                    <th>Column 2</th>
+                    <th>Column 3</th>
+                  </tr>
+                </thead>
+                <tbody>
+                </tbody>
+              </table>
+              
+          
+        </div>
+    </div>
+
+    <!-- //Modal  -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Add API Data</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                            <label for="eventtitle" class="form-label">Event Title:</label><br>
+                            <input type="text" class="form-control" id="eventtitle" name="eventtitle"
+                                placeholder="Enter event title" required>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6">
+                            <label for="startdate" class="form-label">StartDate:</label><br>
+                            <input type="date" class="form-control" id="startdate" name="startdate" required>
+                        </div>
+                        <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6">
+                            <label for="enddate" class="form-label">EndDate:</label><br>
+                            <input type="date" class="form-control" id="enddate" name="enddate" required>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6">
+                            <label for="eventdesc" class="form-label">Event Description:</label><br>
+                            <input type="text" class="form-control" id="eventdesc" name="eventdesc"
+                                placeholder=" Add event description" required>
+                        </div>
+                        <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6">
+                            <label for="eventprio" class="form-label">Event Priority:</label><br>
+                            <input type="text" class="form-control" id="eventprio" name="eventprio"
+                                placeholder="Add event priority" required>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Add Event</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../Bootstrap_setup/jquery-3.6.3.min.js"></script>
+    <script src="../Bootstrap_setup/js/bootstrap.min.js"></script>
+</body>
+
+
+
+</html>
+<script>
+    //$(document).ready(function () {
+        // $.ajax({
+        //     url: 'https://demosatva.azurewebsites.net/v1/api/Events',
+        //     type: 'GET',
+        //     success: function (data) {
+        //         console.log(data)
+        //          $('#apidate').html(JSON.stringify(data.document.records));
+        //         var json = JSON.stringify(data.document.records);
+               
+        //         // (data.document.records)
+
+        //     }
+        // });
+
+        $(document).ready(function () {
+  $.ajax({
+    url: 'https://demosatva.azurewebsites.net/v1/api/Events',
+    type: 'GET',
+    success: function (data) {
+      console.log(data);
+      var rows = '';
+
+      $.each(data.document.records, function(index, record) {
+        rows += '<tr>';
+        rows += '<td>' + record.column1 + '</td>';
+        rows += '<td>' + record.column2 + '</td>';
+        rows += '<td>' + record.column3 + '</td>';
+        rows += '</tr>';
+      });
+
+      $('#myTable tbody').html(rows);
+    }
+  });
+});
+
+
+   // });
+
+
+</script>

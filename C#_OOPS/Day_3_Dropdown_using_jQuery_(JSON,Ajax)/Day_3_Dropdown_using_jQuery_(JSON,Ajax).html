@@ -1,0 +1,104 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dropdown using jQuery (JSON, Ajax)</title>
+    <link rel="stylesheet" href="../Bootstrap_setup/css/bootstrap.min.css">
+</head>
+
+<body>
+    <br /><br />
+    <div class="container" style="width:100%;">
+        <h2 align="center">Country, State and City JSON Dynamic Dependent Dropdown Using Jquery and Ajax</h2>
+        <br /><br />
+        <select name="country" id="country" class="form-select input-lg">
+            <option value="">Select country</option>
+        </select>
+        <br />
+        <select name="state" id="state" class="form-select input-lg">
+            <option value="">Select state</option>
+        </select>
+        <br />
+        <select name="city" id="city" class="form-select input-lg">
+            <option value="">Select city</option>
+        </select>
+    </div>
+
+    <script src="../Bootstrap_setup/jquery-3.6.3.min.js"></script>
+    <script src="../Bootstrap_setup/js/bootstrap.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            var countryOptions = "";
+            var stateOptions = "";
+            var cityOptions = "";
+            $.ajax({
+                type: "Get",
+                url: "Countries.json",
+                dataType: "json",
+                success: function (data) {
+                    console.log(data);
+                    var countryOptions = "<option value=''>Select a country</option>";
+                    $.each(data.countries, function (index, country) {
+                        countryOptions += "<option value='" + country.id + "'>" + country.name + "</option>";
+                    });
+                    $('#country').html(countryOptions);
+                },
+                error: function () {
+                    alert("json not found");
+                }
+            });
+
+            // $.getJSON('Countries.json', function (result) {
+            //     $.each(result, function (country, index) {
+            //         countryOptions += "<option value='" +
+            //             country.id +
+            //             "'>" +
+            //             country.name +
+            //             "</option>";
+            //     });
+            //     $('#country').html(countryOptions);
+            // });
+
+          
+            $("#country").change(function () {
+                var id = $(this).val();
+                if (id != "") {
+                    $.getJSON('States.json', function (result) {
+                        var stateOptions = "<option value=''>Select state</option>";
+                        $.each(result.states, function (stateCode, stateData) {
+                            if (stateData.country_id == id) {
+                                stateOptions += "<option value='" + stateData.id + "'>" + stateData.name + "</option>";
+                            }
+                        });
+                        $('#state').html(stateOptions);
+                    });
+                } else {
+                    $('#state').html("<option value=''>Select state</option>");
+                    $('#city').html("<option value=''>Select city</option>");
+                }
+            });
+
+
+            $("#state").change(function () {
+                var id = $(this).val();
+                if (id != "") {
+                    $.getJSON('Cities.json', function (result) {
+                        var cityOptions = "<option value=''>Select city</option>";
+                        $.each(result.cities, function (cityCode, cityData) {
+                            if (cityData.state_id == id) {
+                                cityOptions += "<option value='" + cityData.id + "'>" + cityData.name + "</option>";
+                            }
+                        });
+                        $('#city').html(cityOptions);
+                    });
+                } else {
+                    $('#city').html("<option value=''>Select city</option>");
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
