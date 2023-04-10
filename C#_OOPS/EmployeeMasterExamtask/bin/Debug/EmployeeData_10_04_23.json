@@ -1,0 +1,19 @@
+[
+  {
+    "EmployeeId": 102,
+    "Name": "Jay",
+    "DOB": "22/11/2001",
+    "Gender": "m",
+    "Designation": "QA",
+    "City": "Rajkot",
+    "State": "Gujrat",
+    "Postcode": 789654,
+    "Phone": "7412589635",
+    "Email": "jay@gmail.com",
+    "DateOfjoining": "01/01/2001",
+    "Totalexperience": 2.0,
+    "Remarks": "sssss",
+    "Department": "2",
+    "MonthlySalary": 7000.0
+  }
+]
