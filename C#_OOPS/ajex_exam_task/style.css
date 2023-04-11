@@ -1,0 +1,55 @@
+.employedata {
+    padding-top: 10px;
+    width: 100vw;
+    height: 80px;
+    background-color: #cfcfcf;
+}
+
+.employedata p {
+    font-size: 22px;
+}
+
+.specific-department {
+    color: #0000ff;
+}
+
+#EmployeDatatable_length{
+    display: none;
+}
+
+.modal-content{
+    width: 48rem;
+    margin-left: -91px;
+}
+
+#staticBackdropLabel{
+    margin-left: 280px;
+    color: rgb(6, 113, 179);
+}
+.active>.page-link, .page-link.active {
+    
+    color: black !important;
+    background-color: white !important;
+    border-color: black !important;
+    
+    
+}
+.active>.page-link, .page-link.active .disabled{
+   
+        pointer-events: none !important;
+}
+.dataTables_wrapper .dataTables_paginate .paginate_button {
+    box-sizing: border-box !important;
+    display: inline-block !important;
+    min-width: 1.5em !important;
+    padding: 0% !important;
+    margin-left: 2px;
+    text-align: center;
+    text-decoration: none !important;
+    cursor: pointer; 
+    color: none; 
+    border: 1px solid !important;
+    border-radius: 0px !important;
+    background:none !important; 
+    pointer-events: none !important;
+}

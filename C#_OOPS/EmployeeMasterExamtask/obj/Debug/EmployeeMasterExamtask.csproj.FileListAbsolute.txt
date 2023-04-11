@@ -9,3 +9,11 @@ D:\Priyesh\C#_OOPS\EmployeeMasterExamtask\obj\Debug\EmployeeMasterExamtask.cspro
 D:\Priyesh\C#_OOPS\EmployeeMasterExamtask\obj\Debug\EmployeeMasterExamtask.csproj.CopyComplete
 D:\Priyesh\C#_OOPS\EmployeeMasterExamtask\obj\Debug\EmployeeMasterExamtask.exe
 D:\Priyesh\C#_OOPS\EmployeeMasterExamtask\obj\Debug\EmployeeMasterExamtask.pdb
+D:\Priyesh\C#_OOPS\EmployeeMasterExamtask\bin\Debug\System.Configuration.ConfigurationManager.dll
+D:\Priyesh\C#_OOPS\EmployeeMasterExamtask\bin\Debug\System.Security.AccessControl.dll
+D:\Priyesh\C#_OOPS\EmployeeMasterExamtask\bin\Debug\System.Security.Permissions.dll
+D:\Priyesh\C#_OOPS\EmployeeMasterExamtask\bin\Debug\System.Security.Principal.Windows.dll
+D:\Priyesh\C#_OOPS\EmployeeMasterExamtask\bin\Debug\System.Configuration.ConfigurationManager.xml
+D:\Priyesh\C#_OOPS\EmployeeMasterExamtask\bin\Debug\System.Security.AccessControl.xml
+D:\Priyesh\C#_OOPS\EmployeeMasterExamtask\bin\Debug\System.Security.Permissions.xml
+D:\Priyesh\C#_OOPS\EmployeeMasterExamtask\bin\Debug\System.Security.Principal.Windows.xml
