@@ -77,8 +77,8 @@ namespace EmployeeMasterExamtask
         public int Postcode { get; set; }
         public string Phone { get; set; }
         public string Email { get; set; }
-        public string DateOfjoining { get; set; }
-        public double Totalexperience { get; set; }
+        public DateTime DateOfjoining { get; set; }
+        public int Totalexperience { get; set; }
 
         public string Remarks { get; set; }
         public string Department { get; set; }
@@ -117,20 +117,27 @@ namespace EmployeeMasterExamtask
 
             List<Employee> employees = LoadEmployeesFromJsonFile();
 
-            int EmployeeId;
-
             bool employeeExists;
             do
             {
                 Console.WriteLine("Enter EmployeeID(Unique):");
-                EmployeeId = Convert.ToInt32(Console.ReadLine());
-                employeeExists = employees.Any(e => e.EmployeeId == EmployeeId);
-                if (employeeExists)
+                try
                 {
-                    Console.WriteLine("Employee with this ID already exists. Please enter a new ID.");
+                    EmployeeId = Convert.ToInt32(Console.ReadLine());
+                    employeeExists = employees.Any(e => e.EmployeeId == EmployeeId);
+                    if (employeeExists)
+                    {
+                        Console.WriteLine("Employee with this ID already exists. Please enter a new ID.");
+                    }
+                }
+                catch (FormatException)
+                {
+                    Console.WriteLine("Invalid input. Please enter a valid integer.");
+                    employeeExists = true; // Set this to true so the loop continues
                 }
             }
             while (employeeExists);
+
 
 
 
@@ -250,42 +257,46 @@ namespace EmployeeMasterExamtask
             }
             while (!IsValidEmailAddress(Email) || string.IsNullOrEmpty(Email));
 
-            do
-            {
-                Console.WriteLine("Enter Date Of Joining:");
-                DateOfjoining = Console.ReadLine();
-            }
-            while (string.IsNullOrEmpty(DateOfjoining));
-
-            //var employee = new Employee();
-            do
-            {
-                Console.WriteLine("Enter Total Experience:");
-                Totalexperience = Convert.ToInt32(Console.ReadLine());
-
-                //double Totalexperience = employee.GetTotalExperience();
-                //Console.WriteLine("Total experience: {0} years", Totalexperience);
-
-
-            }
-            while (Totalexperience == null);
-            //Console.Write("Date of Joining: ");
-            //string dojInput = Console.ReadLine();
-
-            //if (!DateTime.TryParse(dojInput, out DateTime DateOfjoining))
+            //do
             //{
-            //    Console.WriteLine("Invalid date format. Please try again.");
-            //    return;
+            //    Console.WriteLine("Enter Date Of Joining:");
+            //    DateOfjoining = Console.ReadLine();
             //}
+            //while (string.IsNullOrEmpty(DateOfjoining));
 
-            //Console.Write("Total Experience (in years): ");
+            ////var employee = new Employee();
+            //do
+            //{
+            //    Console.WriteLine("Enter Total Experience:");
+            //    Totalexperience = Convert.ToInt32(Console.ReadLine());
 
-            //TimeSpan experienceTimeSpan = DateTime.Now - DateOfjoining;
-            //int totalExperienceInYears = experienceTimeSpan.Days / 365;
-            //int totalExperienceInMonths = (experienceTimeSpan.Days % 365) / 30;
-            //int totalExperienceInDays = (experienceTimeSpan.Days % 365) % 30;
+            //    //double Totalexperience = employee.GetTotalExperience();
+            //    //Console.WriteLine("Total experience: {0} years", Totalexperience);
 
-            //Console.WriteLine($"Total Experience: {totalExperienceInYears} years, {totalExperienceInMonths} months, and {totalExperienceInDays} days.");
+
+            //}
+            //while (Totalexperience == null);
+
+
+
+
+            Console.Write("Date of Joining: ");
+            string dojInput = Console.ReadLine();
+
+            if (!DateTime.TryParse(dojInput, out DateTime DateOfjoining))
+            {
+                Console.WriteLine("Invalid date format. Please try again.");
+                return;
+            }
+
+            Console.Write("Total Experience (in years): ");
+
+            TimeSpan experienceTimeSpan = DateTime.Now - DateOfjoining;
+            int totalExperienceInYears = experienceTimeSpan.Days / 365;
+            int totalExperienceInMonths = (experienceTimeSpan.Days % 365) / 30;
+            int totalExperienceInDays = (experienceTimeSpan.Days % 365) % 30;
+
+            Console.WriteLine($"Total Experience: {totalExperienceInYears} years, {totalExperienceInMonths} months, and {totalExperienceInDays} days.");
 
             do
             {
