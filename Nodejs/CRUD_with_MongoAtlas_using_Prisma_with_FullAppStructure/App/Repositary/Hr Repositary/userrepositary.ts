@@ -13,10 +13,30 @@ class UserRepository {
             }})
         return resposeUser
     }
+    
 
     async getUser(){
         return await prisma.hRList.findMany()
     }
+
+    async update(id: string, usermodel: UserListModel) {
+        const updatedUser = await prisma.hRList.update({
+          where: { id },
+          data: {
+            name: usermodel.name,
+            hrtype: usermodel.hrtype,
+            email: usermodel.email,
+          },
+        });
+        return updatedUser;
+      }
+
+      async delete(id: string) {
+        const deletedUser = await prisma.hRList.delete({
+          where: {id},
+        });
+        return deletedUser;
+      }
 
 }
 

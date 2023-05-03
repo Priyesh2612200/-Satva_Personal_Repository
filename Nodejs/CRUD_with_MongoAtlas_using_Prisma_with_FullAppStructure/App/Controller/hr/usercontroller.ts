@@ -54,7 +54,86 @@ const getUser = async (req: Request, res: Response) => {
     }
 }
 
+const updatedata = async (req: Request, res: Response) => {
+    console.log(req.params)
+    try {
+      const updatedUser = await userRespositary.HrRepositary.update(req.params.id, {
+        name: req.body.name,
+        hrtype : req.body.hrtype,
+        email: req.body.email
+      
+      });
+
+      if (!updatedUser) {
+        let response: responseModel = {
+          status: 404,
+          message: "User not found",
+          data: null,
+          error: null,
+        };
+        res.status(404).json(response);
+      } else {
+        let response: responseModel = {
+          status: 200,
+          message: "User updated successfully",
+          data: { user: updatedUser },
+          error: null,
+        };
+        res.status(200).json(response);
+      }
+    } catch (e) {
+      let response: responseModel = {
+        status: 500,
+        message: "Data update failed",
+        data: null,
+        error: e as string,
+      };
+      res.status(500).json(response);
+    }
+  };
+
+  const deletedata = async (req: Request, res: Response) => {
+ 
+    try {
+      console.log(req.params)
+
+      const deletedUser = await userRespositary.HrRepositary.delete(req.params.id);
+  
+      if (deletedUser) {
+        let response: responseModel = {
+          status: 200,
+          message: "User deleted successfully",
+          data: null,
+          error: null,
+        };
+        console.log("deleteresponse",response)
+        res.status(200).json(response);
+      } else {
+        let response: responseModel = {
+          status: 404,
+          message: "User not found",
+          data: null,
+          error: null,
+        };
+        res.status(404).json(response);
+      }
+    } catch (e) {
+      console.log("deleteerror",e)
+      let response: responseModel = {
+        status: 500,
+        message: "Data delete failed",
+        data: null,
+        error: e as string,
+      };
+      res.status(500).json(response);
+    }
+  };
+
+  
+
 export default {
     saveUser,
-    getUser
+    getUser,
+    updatedata,
+    deletedata
 }

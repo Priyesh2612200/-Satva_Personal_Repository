@@ -60,6 +60,9 @@ const getemp = async (req: Request, res: Response) => {
     }
 }
 
+
+
+
 export default {
     saveemp,
     getemp

@@ -2,6 +2,10 @@ import express from 'express'
 import bodyParser from 'body-parser';
 import mongoDBConnection from '../Config/MongoDBConfig';
 import routes from '../App/Routes'
+import { Prisma, PrismaClient } from '@prisma/client';
+
+const prisma = new PrismaClient();
+
 
 class Server {
     port: any
@@ -13,7 +17,7 @@ class Server {
 
     start() {
         this.config()
-        mongoDBConnection.dbConnect()
+        //mongoDBConnection.dbConnect()
         this.setupRoutes()
         this.listen()
     }
@@ -30,6 +34,7 @@ class Server {
     listen() {
         this.app.listen(this.port, () => {
             console.log(`App is running on port ${this.port}`);
+            // console.log(`MongoDB Connection Flag: ${prisma.$connect()}`)
         })
     }
 }
