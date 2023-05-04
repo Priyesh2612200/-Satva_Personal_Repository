@@ -5,4 +5,5 @@ export interface ManagerListModel {
   city: string
   managerrole : string 
   salary:number  
+  seniorempid:string
 }

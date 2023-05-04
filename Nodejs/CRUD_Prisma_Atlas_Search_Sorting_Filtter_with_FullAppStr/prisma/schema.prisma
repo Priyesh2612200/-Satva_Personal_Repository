@@ -17,6 +17,9 @@ model HRList {
   hrtype String
   email  String @unique
 
+  //  managerid String[] @db.ObjectId
+  // managerlist ManagerList[] @relation(fields: [managerid],references: [id])
+
 }
 
 model Employeelist {
@@ -36,14 +39,23 @@ model ManagerList{
    city String
    managerrole String
    salary Int
+
+   seniorempid String[] @db.ObjectId
+   senioremplist SeniorEmpList[] @relation(fields: [seniorempid],references: [id])
+
+  //  hrid String[] @db.ObjectId
+  //  hrlist HRList[] @relation(fields: [hrid],references: [id])
 }
 
 model SeniorEmpList{
   id     String @id @default(auto()) @map("_id") @db.ObjectId
-  name String
+  name String 
   email String
   city String
   senioremprole String
+
   managerid String[] @db.ObjectId
+  managerlist ManagerList[] @relation(fields: [managerid],references: [id])
+
   salary Int
 } 

@@ -20,6 +20,16 @@ class UserRepository {
 
     async getUser(){
         return await prisma.seniorEmpList.findMany()
+        // return await prisma.seniorEmpList.findMany({
+        //   include : {
+        //     managerlist:{
+        //       select:{
+        //         name:true,
+        //         salary:true
+        //       }
+        //     }
+        //   },
+        // });
     }
 
     async update(id: string, usermodel: SeniorEmpListModel) {

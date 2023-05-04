@@ -32,9 +32,24 @@ class Server {
     }
 
     listen() {
-        this.app.listen(this.port, () => {
+        this.app.listen(this.port,async () => {
             console.log(`App is running on port ${this.port}`);
-            // console.log(`MongoDB Connection Flag: ${prisma.$connect()}`)
+            // console.log(`MongoDB Connection Flag:`,await  prisma.employeelist.findFirst()?`connected`:`not Connected`)
+            async function main() {
+                try {
+                  await prisma.$connect()
+                  console.log('Database connected')
+                } catch (e) {
+                //   console.error(`Error connecting to database: ${e.message}`)
+                  console.error(`Error connecting to database`)
+                }
+              }
+              
+              main()
+                .catch((e) => console.error(e))
+                .finally(async () => {
+                  await prisma.$disconnect()
+                })
         })
     }
 }

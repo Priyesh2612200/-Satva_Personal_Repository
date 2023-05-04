@@ -11,5 +11,7 @@ router.delete('/deleteManager/:id',controller.managercontroller.deleteManager);
 
 router.get('/searchManager/:key',controller.managercontroller.searchManager);
 
+router.get('/sortingManager',controller.managercontroller.sortingManager);
+
 
 export default router;

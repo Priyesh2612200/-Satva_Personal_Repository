@@ -11,7 +11,8 @@ const saveManager =  async (req: Request, res: Response) => {
         email:req.body.email,
         city:req.body.city,
         managerrole:req.body.managerrole,
-        salary:req.body.salary
+        salary:req.body.salary,
+        seniorempid:req.body.seniorempid
     }
     console.log('User Req' + user)
     try {
@@ -64,7 +65,8 @@ const updateManager = async (req: Request, res: Response) => {
         email:req.body.email,
         city:req.body.city,
         managerrole:req.body.managerrole,
-        salary:req.body.salary
+        salary:req.body.salary,
+        seniorempid:req.body.seniorempid
       });
 
       if (!updatedUser) {
@@ -139,10 +141,37 @@ const searchManager = async (req: Request, res: Response) => {
     res.send(searchData);
 };
 
+
+const sortingManager = async (req: Request, res: Response) => {
+    const search = req.query.search as string
+    const sort = req.query.sort
+  try {
+      const userResponse = await userRespositary.ManagerRepositary.getsortdata(sort, search)
+     
+      let response : responseModel = {
+          status: 201,
+          message: "User Get successfully",
+          data: userResponse,
+          error: null
+      }
+      res.status(201).json(response);
+  } catch (e) {
+      let response : responseModel = {
+          status: 400,
+          message: "User Get to failed",
+          data: null,
+          error: e as string
+      }
+      res.status(400).json(response);
+  }
+}
+
+
 export default {
     saveManager,
     getManager,
     updateManager,
     deleteManager,
-    searchManager
+    searchManager,
+    sortingManager
 }
