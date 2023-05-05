@@ -5,4 +5,5 @@ export interface EmpListModel {
   email:   string
   address: string
   emptype : string   
+  managerId:string
 }

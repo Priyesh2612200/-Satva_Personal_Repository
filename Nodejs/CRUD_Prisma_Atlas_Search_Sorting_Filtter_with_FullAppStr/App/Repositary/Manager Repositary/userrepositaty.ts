@@ -35,18 +35,18 @@ class UserRepository {
     //     },
     //   });
 
-    return await prisma.managerList.findMany({
-      include: {
-        senioremplist: {
-          select: {
-            name: true,
-            salary: true
-          }
-        }
-      },
-    });
-
     // return await prisma.managerList.findMany({
+    //   include: {
+    //     senioremplist: {
+    //       select: {
+    //         name: true,
+    //         salary: true
+    //       }
+    //     }
+    //   },
+    // });
+
+     // return await prisma.managerList.findMany({
     //   where: {
     //     name: 'Shiv',
     //   },
@@ -57,8 +57,29 @@ class UserRepository {
     // })
 
 
-  }
 
+
+
+    return await prisma.managerList.findMany({
+      include: {
+        employeelist: {
+          select: {
+            name: true,
+            age:true
+          },
+          where:{
+            age:{
+              gte:10
+            }
+          }
+        }
+      },                                                                                       
+    });
+
+   
+
+  }
+                                         
   async update(id: string, usermodel: ManagerListModel) {
     const updatedUser = await prisma.managerList.update({
       where: { id },
@@ -81,63 +102,50 @@ class UserRepository {
     return deletedUser;
   }
 
-  async get(key: string) {
-
-  }
-
-
-  async getsortdata(sortType: any, key: string) {
+                  
+  async getsortdata( key: string,sortType: any, sortFieldName: string) {
+    console.log('key: ', key);
     var searchUser: any = [];
-    if (key != undefined && key != "") {
-      let sort={}
-      if(sortType){
-       sort= {
-          name: sortType
-        }
+    let sort = {}
+    let search = {}
+   
+
+    if (sortType) {
+      sort = {
+        [sortFieldName]: sortType
       }
-      
-      searchUser = await prisma.managerList.findMany({
-        where: {
-          OR: [
-            {
-              name: {
-                contains: key,
-
-              },
-            },
-            {
-              city: {
-                contains: key,
-              },
-
-            },
-          ],
-        },
-
-        include: {
-          senioremplist: true,
-        },
-
-      orderBy:sort
-
-      });
-
-      return searchUser
     }
 
-    const sortUser = await prisma.managerList.findMany({
+    if (key) {
+      console.log('key: ', key);
+      search = {
+        OR: [{
+          name: {
+            contains: key,
 
-      orderBy: {
-        name: sortType
+          },
+        },
+        {
+          city: {
+            contains: key,
+          },
+
+        }
+
+        ]
       }
+
+    }
+
+
+    console.log('search: ', search);
+
+    searchUser = await prisma.managerList.findMany({
+      where: search,
+      orderBy: sort,
     });
-    // return sortUser;
 
-
-
-
-    return searchUser;
-
+    return searchUser
 
   };
 }

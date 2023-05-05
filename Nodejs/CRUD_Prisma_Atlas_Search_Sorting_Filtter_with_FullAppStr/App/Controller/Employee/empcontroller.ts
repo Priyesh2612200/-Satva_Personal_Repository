@@ -11,7 +11,8 @@ const saveemp =  async (req: Request, res: Response) => {
         age: req.body.age,
         email: req.body.email,
         address: req.body.address,
-        emptype: req.body.emptype
+        emptype: req.body.emptype,
+        managerId:req.body.managerId
     }
     console.log('User Req' + empuser)
     try {
@@ -50,6 +51,7 @@ const getemp = async (req: Request, res: Response) => {
         }
         res.status(201).json(response);
     } catch (e) {
+      console.log(`Error: ${e}`)
         let response : responseModel = {
             status: 400,
             message: "User save failed",
@@ -67,7 +69,8 @@ const updateemp = async (req: Request, res: Response) => {
         age: req.body.age,
         email: req.body.email,
         address: req.body.address,
-        emptype: req.body.emptype
+        emptype: req.body.emptype,
+        managerId:req.body.managerId
       });
 
       if (!updatedUser) {

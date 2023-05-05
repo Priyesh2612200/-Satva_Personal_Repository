@@ -9,7 +9,8 @@ const saveUser =  async (req: Request, res: Response) => {
     const user : UserListModel = {
         name: req.body.name,
         hrtype : req.body.hrtype,
-        email: req.body.email
+        email: req.body.email,
+        empid:req.body.empid
     }
     console.log('User Req' + user)
     try {
@@ -60,7 +61,9 @@ const updatedata = async (req: Request, res: Response) => {
       const updatedUser = await userRespositary.HrRepositary.update(req.params.id, {
         name: req.body.name,
         hrtype : req.body.hrtype,
-        email: req.body.email
+        email: req.body.email,
+        empid:req.body.empid
+        
       
       });
 
@@ -129,11 +132,37 @@ const updatedata = async (req: Request, res: Response) => {
     }
   };
 
+
+  const getresult = async (req: Request, res: Response) => {
+    const search = req.query.search as string
+    const sort = req.query.sort as string
+    const sortFieldName = req.query.sortFieldName as string
+  try {
+      const userResponse = await userRespositary.HrRepositary.getresult(search,sort,sortFieldName)     
+      let response : responseModel = {
+          status: 201,
+          message: "User Get successfully",
+          data: userResponse,
+          error: null
+      }
+      res.status(201).json(response);
+  } catch (e) {
+      let response : responseModel = {
+          status: 400,
+          message: "User Get to failed",
+          data: null,
+          error: e as string
+      }
+      res.status(400).json(response);
+  }
+}
+
   
 
 export default {
     saveUser,
     getUser,
     updatedata,
-    deletedata
+    deletedata,
+    getresult
 }

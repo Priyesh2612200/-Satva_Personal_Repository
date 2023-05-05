@@ -3,4 +3,5 @@ export interface UserListModel {
     name:  string
     hrtype : string
   email:   string   
+  empid : string 
 }

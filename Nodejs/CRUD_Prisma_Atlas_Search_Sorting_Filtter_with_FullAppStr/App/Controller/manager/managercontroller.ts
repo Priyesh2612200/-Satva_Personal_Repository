@@ -134,20 +134,12 @@ const updateManager = async (req: Request, res: Response) => {
     }
   };
 
-
-const searchManager = async (req: Request, res: Response) => {
-    console.log(req.params.key);
-    let searchData = await userRespositary.ManagerRepositary.get(req.params.key);
-    res.send(searchData);
-};
-
-
 const sortingManager = async (req: Request, res: Response) => {
     const search = req.query.search as string
-    const sort = req.query.sort
+    const sort = req.query.sort as string
+    const sortFieldName = req.query.sortFieldName as string
   try {
-      const userResponse = await userRespositary.ManagerRepositary.getsortdata(sort, search)
-     
+      const userResponse = await userRespositary.ManagerRepositary.getsortdata(search,sort,sortFieldName)     
       let response : responseModel = {
           status: 201,
           message: "User Get successfully",
@@ -172,6 +164,5 @@ export default {
     getManager,
     updateManager,
     deleteManager,
-    searchManager,
     sortingManager
 }

@@ -17,8 +17,8 @@ model HRList {
   hrtype String
   email  String @unique
 
-  //  managerid String[] @db.ObjectId
-  // managerlist ManagerList[] @relation(fields: [managerid],references: [id])
+  empid String @db.ObjectId
+  empliyeelist Employeelist @relation(fields: [empid], references: [id])
 
 }
 
@@ -30,6 +30,12 @@ model Employeelist {
   address String
   emptype String
 
+  hrlists HRList[]
+
+  managerId String @db.ObjectId
+  managerlist ManagerList  @relation(fields: [managerId],references: [id])
+
+
 }
 
 model ManagerList{
@@ -40,11 +46,15 @@ model ManagerList{
    managerrole String
    salary Int
 
-   seniorempid String[] @db.ObjectId
-   senioremplist SeniorEmpList[] @relation(fields: [seniorempid],references: [id])
 
-  //  hrid String[] @db.ObjectId
-  //  hrlist HRList[] @relation(fields: [hrid],references: [id])
+  seniorempid String[] @db.ObjectId
+  senioremplist SeniorEmpList[] @relation(fields: [seniorempid],references: [id])
+
+   
+  employeelist Employeelist[]
+
+   
+
 }
 
 model SeniorEmpList{
@@ -56,6 +66,8 @@ model SeniorEmpList{
 
   managerid String[] @db.ObjectId
   managerlist ManagerList[] @relation(fields: [managerid],references: [id])
+
+  
 
   salary Int
 } 

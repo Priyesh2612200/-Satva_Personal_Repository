@@ -9,4 +9,6 @@ router.get('/getUser',controller.userController.getUser);
 router.put('/updatedata/:id',controller.userController.updatedata);
 router.delete('/deletedata/:id',controller.userController.deletedata);
 
+router.get('/getResult',controller.userController.getresult);
+
 export default router;

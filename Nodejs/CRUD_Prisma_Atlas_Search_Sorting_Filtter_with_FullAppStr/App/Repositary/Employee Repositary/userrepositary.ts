@@ -12,12 +12,21 @@ class UserRepository {
             email: userModel.email,
             address: userModel.address,
             emptype : userModel.emptype,
+            managerId:userModel.managerId
             }})
         return resposeUser
     }
 
     async getUser(){
-        return await prisma.employeelist.findMany()
+        return await prisma.employeelist.findMany({
+          include:{
+            managerlist:{
+              select:{
+                id: true
+              }
+            }
+          }
+        })
     }
 
     async update(id: string, usermodel: EmpListModel) {
@@ -29,6 +38,7 @@ class UserRepository {
             email: usermodel.email,
             address: usermodel.address,
             emptype : usermodel.emptype,
+            managerId:usermodel.managerId
           },
         });
         return updatedUser;
