@@ -8,8 +8,8 @@ const prisma = new PrismaClient();
 
 
 class Server {
-    port: any
-    app: any
+    port: number
+    app: express.Application
     constructor() {
         this.port = 3000
         this.app = express()

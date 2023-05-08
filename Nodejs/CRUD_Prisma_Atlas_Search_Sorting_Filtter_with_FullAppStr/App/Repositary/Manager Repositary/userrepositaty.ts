@@ -46,7 +46,7 @@ class UserRepository {
     //   },
     // });
 
-     // return await prisma.managerList.findMany({
+    // return await prisma.managerList.findMany({
     //   where: {
     //     name: 'Shiv',
     //   },
@@ -56,30 +56,54 @@ class UserRepository {
     //   },
     // })
 
+    // return await prisma.managerList.findMany({
+    //   include: {
+    //     employeelist: {
+    //       select: {
+    //         name: true,
+    //         age: true
+    //       },
+    //       where: {
+    //         AND: [
+    //           { age: { gte: 20 } },
+    //           { name: 'priyesh' }
+    //         ]
+    //       }
 
-
-
+    //     },
+    //   }
+    // });
 
     return await prisma.managerList.findMany({
       include: {
+
+        senioremplist:{
+            select:
+            {
+              name:true,
+              city:true,
+            }
+        },
         employeelist: {
           select: {
             name: true,
-            age:true
+            age: true
           },
-          where:{
-            age:{
-              gte:10
-            }
+          where: {
+            AND: [
+              { age: { gte: 20 } },
+              { name: 'priyesh' }
+            ]
           }
-        }
-      },                                                                                       
+
+        },
+      }
     });
 
-   
+
 
   }
-                                         
+
   async update(id: string, usermodel: ManagerListModel) {
     const updatedUser = await prisma.managerList.update({
       where: { id },
@@ -102,14 +126,13 @@ class UserRepository {
     return deletedUser;
   }
 
-                  
-  async getsortdata( key: string,sortType: any, sortFieldName: string) {
+
+  async getsortdata(key: string, sortType: any, sortFieldName: string) {
     console.log('key: ', key);
     var searchUser: any = [];
     let sort = {}
     let search = {}
-   
-
+    
     if (sortType) {
       sort = {
         [sortFieldName]: sortType
@@ -136,13 +159,14 @@ class UserRepository {
       }
 
     }
-
-
     console.log('search: ', search);
+
+  
 
     searchUser = await prisma.managerList.findMany({
       where: search,
       orderBy: sort,
+
     });
 
     return searchUser

@@ -138,6 +138,7 @@ const sortingManager = async (req: Request, res: Response) => {
     const search = req.query.search as string
     const sort = req.query.sort as string
     const sortFieldName = req.query.sortFieldName as string
+
   try {
       const userResponse = await userRespositary.ManagerRepositary.getsortdata(search,sort,sortFieldName)     
       let response : responseModel = {
