@@ -1,0 +1,63 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model EmpAuthData {
+  id       Int    @id @default(autoincrement())
+  name     String
+  email    String @unique
+  password String
+  address  String
+  emptype  String
+
+  hrlists HRList?//1-1
+
+  managerid   Int //1-m
+  managerlist ManagerList @relation(fields: [managerid], references: [id]) //1-m
+}
+
+model HRList {
+  id       Int    @id @default(autoincrement())
+  name     String
+  email    String @unique
+  password String
+  hrtype   String
+
+  empid       Int         @unique //1-1 @unique
+  EmpAuthData EmpAuthData @relation(fields: [empid], references: [id]) //1-1
+}
+
+model ManagerList {
+  id          Int    @id @default(autoincrement())
+  name        String
+  email       String
+  password    String
+  city        String
+  managerrole String
+  salary      Int
+
+  senioremplist SeniorEmpList[] //m-m
+
+  employeelist EmpAuthData[] //1-m
+}
+
+model SeniorEmpList {
+  id            Int    @id @default(autoincrement())
+  name          String
+  email         String
+  password      String
+  city          String
+  senioremprole String
+
+  managerlist ManagerList[] //m-m
+
+  salary Int
+}
