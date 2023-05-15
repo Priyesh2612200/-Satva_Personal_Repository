@@ -172,10 +172,11 @@ const updateemp = async (req: Request, res: Response) => {
   console.log(req.params)
   try {
     let id= parseInt(req.params.id); 
+    const hashedPassword = await bcrypt.hash(req.body.password, 10);
     const updatedUser = await SeniorEmpRepository.senioremprepositary.update(id,{
       name: req.body.name,
       email: req.body.email,
-      password: req.body.password,
+      password: hashedPassword,
       city:req.body.city,
       senioremprole:req.body.senioremprole,
       salary:req.body.salary,

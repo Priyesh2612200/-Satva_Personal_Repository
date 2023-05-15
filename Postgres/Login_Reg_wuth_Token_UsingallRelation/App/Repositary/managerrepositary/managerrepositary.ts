@@ -1,6 +1,7 @@
 import { PrismaClient } from '@prisma/client';
 
 import { Managermodel } from '../../Models/interface';
+import { test } from 'node:test';
 
 
 
@@ -42,23 +43,39 @@ class ManagerRepository {
     })
   }
   
-// async findOne(email: any) {
-//   return await prisma.managerList.findUnique({
-//     where: {
-//       email: email
-//     }
-//   });
-// }
+  async findOne(email:any) {
+   
+    return await prisma.managerList.findUnique({
+      where: {
+        email: email
+      }
+    })
+  }
 
-      async getUser(userid: number){
+    async getUser(userid: number){
   // return await prisma.empAuthData.findMany();
   return await prisma.managerList.findMany({
     where: {
       id: userid
     },
     include:{
-      employeelist:true,
-      senioremplist:true
+      employeelist:{
+        select:{
+          name:true,
+          emptype:true
+        }
+      },
+      senioremplist:{
+        select:
+        {
+          name:true,
+        },
+        where:{
+          salary:{
+            gt:25000
+          }
+        }
+      }
     }
   });
 }
@@ -126,6 +143,11 @@ async getsortdata(key: string, sortType: any, sortFieldName: string) {
   searchUser = await prisma.managerList.findMany({
     where: search,
     orderBy: sort,
+
+    // include:{
+    //   senioremplist:true,
+    //   employeelist:true
+    // }
 
   });
 

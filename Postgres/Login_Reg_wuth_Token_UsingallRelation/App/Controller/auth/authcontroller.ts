@@ -164,15 +164,15 @@ const verifytoken = async (req: any, res: Response) => {
   }
 }
 
-
 const updateemp = async (req: Request, res: Response) => {
   console.log(req.params)
   try {
     let id= parseInt(req.params.id); 
+    const hashedPassword = await bcrypt.hash(req.body.password, 10);
     const updatedUser = await EmployeeRepository.authrepositary.update(id,{
       name: req.body.name,
       email: req.body.email,
-      password: req.body.password,
+      password: hashedPassword,
       address:req.body.address,
       emptype: req.body.emptype,
       managerid:req.body.managerid

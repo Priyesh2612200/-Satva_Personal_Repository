@@ -35,11 +35,12 @@ class EmployeeRepository {
     })
   }
   
+
 async findOne(email: any) {
   return await prisma.empAuthData.findUnique({
     where: {
-      email: email
-    }
+      email: email,
+    },
   });
 }
 
@@ -51,7 +52,18 @@ async findOne(email: any) {
       
     },
     include:{
-      managerlist:true
+      managerlist:{
+        select:{
+          name:true,
+          city:true
+        }
+      },
+      hrlists:{
+        select:{
+          name:true,
+          hrtype:true
+        }
+      }
     }
   });
 }

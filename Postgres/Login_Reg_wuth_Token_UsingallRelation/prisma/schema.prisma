@@ -21,7 +21,7 @@ model EmpAuthData {
   hrlists HRList?//1-1
 
   managerid   Int //1-m
-  managerlist ManagerList @relation(fields: [managerid], references: [id]) //1-m
+  managerlist ManagerList @relation(fields: [managerid], references: [id]) //1-m orDelete:Cascade
 }
 
 model HRList {
@@ -38,7 +38,7 @@ model HRList {
 model ManagerList {
   id          Int    @id @default(autoincrement())
   name        String
-  email       String
+  email       String @unique
   password    String
   city        String
   managerrole String
@@ -52,7 +52,7 @@ model ManagerList {
 model SeniorEmpList {
   id            Int    @id @default(autoincrement())
   name          String
-  email         String
+  email         String @unique
   password      String
   city          String
   senioremprole String

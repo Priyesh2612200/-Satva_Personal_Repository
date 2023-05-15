@@ -44,13 +44,13 @@ class SeniorEmpRepository {
     })
   }
 
-  // async findOne(email: any) {
-  //   return await prisma.seniorEmpList.findUnique({
-  //     where: {
-  //       email: email
-  //     }
-  //   });
-  // }
+  async findOne(email: any) {
+    return await prisma.seniorEmpList.findUnique({
+      where: {
+        email: email
+      },
+    });
+  }
 
   async getUser(userid: number) {
     // return await prisma.empAuthData.findMany();
@@ -60,7 +60,11 @@ class SeniorEmpRepository {
       },
       include:
       {
-        managerlist:true
+        managerlist:{
+          select:{
+            name:true
+          }
+        }
       }
     });
   }

@@ -65,6 +65,12 @@ CREATE UNIQUE INDEX "HRList_email_key" ON "HRList"("email");
 CREATE UNIQUE INDEX "HRList_empid_key" ON "HRList"("empid");
 
 -- CreateIndex
+CREATE UNIQUE INDEX "ManagerList_email_key" ON "ManagerList"("email");
+
+-- CreateIndex
+CREATE UNIQUE INDEX "SeniorEmpList_email_key" ON "SeniorEmpList"("email");
+
+-- CreateIndex
 CREATE UNIQUE INDEX "_ManagerListToSeniorEmpList_AB_unique" ON "_ManagerListToSeniorEmpList"("A", "B");
 
 -- CreateIndex

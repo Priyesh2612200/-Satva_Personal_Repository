@@ -36,13 +36,13 @@ class HRRepository {
     })
   }
   
-async findOne(email: any) {
-  return await prisma.hRList.findUnique({
-    where: {
-      email: email
-    }
-  });
-}
+  async findOne(email: any) {
+    return await prisma.hRList.findUnique({
+      where: {
+        email: email,
+      },
+    });
+  }
 
       async getUser(userid: number){
   // return await prisma.empAuthData.findMany();
@@ -51,7 +51,13 @@ async findOne(email: any) {
       id: userid
     },
    include:{
-    EmpAuthData:true
+    EmpAuthData:{
+      select:{
+        name:true,
+        emptype:true,
+        address:true
+      }
+    }
    }
   });
 }
