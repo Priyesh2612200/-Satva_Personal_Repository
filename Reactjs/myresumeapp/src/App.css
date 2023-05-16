@@ -1,0 +1,81 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.name-data{
+  background: #3e3e3f;
+  color: white;
+  text-align: center;
+  
+}
+.leftside-text{
+  text-align: center;
+  text-align: justify;
+  background-color: #EFEFF0;
+  padding: 0% 10px;
+}
+.rightside-text{
+  text-align: center;
+  text-align: justify;
+  
+}
+body{
+  font-family: 'Roboto', sans-serif;
+}
+h1{
+  font-size: 85px;
+  font: bold;
+}
+h2{
+  font-size: 60px;
+  font: bold;
+}
+h3{
+  font-size: 35px;
+  font: bold;
+}
+
+.skillfirstrow{
+  text-align: center;
+  text-align: justify;
+}
+.textsize{
+  font-size: 15px;
+  text-align: justify;
+  
+}
